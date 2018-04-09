@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.xiaoyong</groupId>
-  <artifactId>SS Jpa</artifactId>
+  <artifactId>IPMS</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <!--<name>web-ssm Maven Webapp</name>-->
@@ -254,7 +254,7 @@
   </dependencies>
 
   <build>
-    <finalName>SS Jpa</finalName>
+    <finalName>IPMS</finalName>
     <plugins>
       <!--<plugin>
         <groupId>org.mybatis.generator</groupId>
