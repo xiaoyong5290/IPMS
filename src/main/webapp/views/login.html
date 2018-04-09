@@ -1,0 +1,93 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="/lib/jquery-3.3.1.js"></script>
+    <script>
+        /* $(document).ready(function () {
+             buttonClick();
+             }
+         );*/
+
+        function query() {
+            var tbody = "";
+            $.ajax({
+                type: "get",
+                url: "/user",
+                dataType: "text",
+                data: {
+                    "userId": 2
+                },
+                success: function (data) {
+                   /* $("#myDiv").html("").append(data);*/
+                    
+                     $("#myDiv").html("").append(data);
+                }
+            })
+        }
+
+        function queryAll() {
+            $.ajax({
+                type: "get",
+                url: "/userpage",
+                dataType: "json",
+                success: function (data) {
+                  /*  alert(data.content);*/
+
+                    var tbody = "<table border='1'></table>";
+                    $.each(data.content,function (i,value) {
+                        // alert(i+data[i]);
+                        var jsonObj = value;
+                        var trs= "<tr></tr>";
+                        trs.append("<td>" + i + "</td> <td>" + jsonObj.pwd + "</td>");
+                        tbody .append(trs);
+                    });
+                    $("#myDiv").html("").append(tbody);
+                }
+            })
+        }
+
+        function add() {
+            $.ajax({
+                type: "post",
+                url: "/add",
+                dataType: "text",
+                data: {
+                    "userName": "Doo",
+                    "pwd": "4321",
+                    "clazz": 3
+                },
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert("错误！")
+                }
+            })
+        }
+
+        function login() {
+            $.post("/login", $("#login").serialize(), function (data) {
+                if (data.code === 0) {
+                    $("#myDiv").html("").append("登录成功！");
+                } else {
+                    $("#myDiv").html("").append("账号或密码错误！");
+                }
+            }, "json")
+        }
+    </script>
+</head>
+<body>
+<a href="/upload" >文件上传</a>
+<h2>使用 AJAX 修改内容</h2>
+<div id="myDiv">这里的文本会改变</div>
+<button type="button" id="query" onclick="query()">findOne</button>
+<button type="button" id="add" onclick="queryAll()">findAll</button>
+<form id="login">
+    <label for="name"></label><input type="text" id="name" name="name"/><br>
+    <label for="password"></label><input type="password" id="password" name="password"/>
+    <button type="button" value="Button" onclick="login()">Button</button>
+</form>
+<img src="/images/img01.jpg">
+
+</body>
+</html>

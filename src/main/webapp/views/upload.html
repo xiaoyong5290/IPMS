@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/lib/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!--上传单个文件：
+<form enctype="multipart/form-data" action="/upload/saveFile" method="post">
+    选择文件：<input type="file" name="upFile"><br>
+    <input type="submit" value="上传">
+</form>-->
+
+
+上传单个文件：
+<form>
+    选择文件：<input type="file" id="upFile" name="upFile"><br>
+    <div id="note"></div>
+    <button type="button" onclick="uploadFile()">上传</button>
+</form>
+<p>**************************************************************</p>
+上传多个文件：
+<form action="/upload/saveFiles" enctype="multipart/form-data" method="post">
+    选择文件：<input type="file" name="upFiles" multiple="multiple"><br>
+    <input type="submit" value="上传">
+</form>
+
+<img id="image">
+<div id="result"></div>
+<script>
+    function uploadFile() {
+        /*使用$("#upFile")的形式无法继续后面的代码，应该是发生了错误*/
+        /*
+        $("#id")获取到的是Jquery对象，而$(document.getElementById("id"))获取到的是DOM对象
+        $(document.getElementById("id")) 就可以由一个DOM对象变为一个Jquery 对象；
+        $("#id")[0] 或是$("#id").get(0) 就可以由一个jquery 对象变为一个DOM对象了。*/
+
+        var fileObj = document.getElementById("upFile").files[0];
+        /*注意两个条件的顺序。
+         如果没有选择任何文件，那么fileObj的类型就是undefined,而undefined类型是没有.size字段的。
+         所以，如果先判断长度就可能会发生错误，后面的代码不会再执行*/
+        if (typeof (fileObj) === "undefined" || fileObj.size <= 0) {
+            $("#note").empty().append("请选择有效文件！");
+            return;
+        }
+
+        var formFile = new FormData();
+        formFile.append("upFile", fileObj);
+        $.ajax({
+            type: 'POST',
+            url: "/upload/saveFile",
+            dataType: "text",
+            data: formFile,
+            contentType: false, //必须
+            processData: false,//用于对data参数进行序列化处理 这里必须false 否则会被转成字符串
+            success: function (data) {
+                $("#result").html("").append(data);
+            },
+            error: function (data) {
+                $("#result").html("").append(data);
+            }
+        })
+    }
+</script>
+</body>
+</html>
