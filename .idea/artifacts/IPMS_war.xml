@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IPMS:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SS Jpa.war">
+      <element id="artifact" artifact-name="IPMS:war exploded" />
+    </root>
+  </artifact>
+</component>
