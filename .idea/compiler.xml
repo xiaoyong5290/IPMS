@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Blog" target="7" />
       <module name="IPMS" target="1.5" />
     </bytecodeTargetLevel>
   </component>

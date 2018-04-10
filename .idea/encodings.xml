@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/BlogController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/BloggerController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/CommentController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/IndexController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/BlogAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/BlogTypeAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/BloggerAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/CommentAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/DateJsonValueProcessor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/LinkAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/controller/admin/SystemAdminController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/dao/BlogDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/dao/BlogTypeDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/dao/BloggerDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/dao/CommentDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/dao/LinkDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/Blog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/BlogType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/Blogger.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/Comment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/Link.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/entity/PageBean.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/lucene/BlogIndex.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/realm/MyRealm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/BlogService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/BlogTypeService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/BloggerService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/CommentService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/LinkService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/BlogServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/BlogTypeServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/BloggerServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/CommentServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/InitComponent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/service/impl/LinkServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/util/CryptographyUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/util/DateUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/util/PageUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Blog/src/main/java/com/java1234/util/StringUtil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

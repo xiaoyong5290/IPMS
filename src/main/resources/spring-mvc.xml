@@ -13,7 +13,6 @@
 
     <!-- 自动扫描  @Controller-->
     <context:component-scan base-package="com.xiaoyong.controller"/>
-    <!--<context:component-scan base-package="com.xiaoyong.test"/>-->
 
     <!--静态资源(js、image等)的访问-->
     <mvc:default-servlet-handler/>
@@ -42,31 +41,16 @@
         </property>
     </bean>-->
 
-    <!--*************************************************************-->
-  <!--  <bean id="user" class="com.xiaoyong.test.User">
-        <property name="role" ref="role"/>
-    </bean>
-
-    <bean id="role" class="com.xiaoyong.test.Role">
-        <property name="name" value="common"/>
-    </bean>
-    &lt;!&ndash;<bean id="aspectTest" class="com.xiaoyong.test.AopLogPrint"/>&ndash;&gt;-->
-
-    <!--*************************************************************-->
-   <!-- <mvc:resources mapping="images/**" location="classpath:/images/**"/>
-
-    <mvc:resources mapping="js/**" location="/js/"/>-->
-
     <!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix" value="/views/" />
         <property name="suffix" value=".jsp"/>
     </bean>
 
-<!--    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
 
-    </bean>-->
+    </bean>
 
 
     <!--SpringMVC上传文件时，需要配置MultipartResolver处理器。如果没有使用文件上传功能
