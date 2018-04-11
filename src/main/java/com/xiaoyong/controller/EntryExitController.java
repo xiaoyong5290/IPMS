@@ -79,5 +79,4 @@ public class EntryExitController {
         return entryExitRecordService.getRemainedBerthCount();
     }
 
-
 }

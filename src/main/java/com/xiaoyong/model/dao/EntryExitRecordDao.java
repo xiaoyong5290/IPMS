@@ -19,15 +19,22 @@ public interface EntryExitRecordDao extends JpaRepository<EntryExitRecord,Intege
     /**
      * 查询所有还没有出场的进出场记录
      * @see EntryExitRecord
-     * @return 返回EntryExitRecord列表
+     * @return 返回未出场记录列表
      */
     List<EntryExitRecord> findAllByExitTimeNull();
+
+    /**
+     * 此方法由EntryExitRecordDaoImpl提供自定义实现
+     * @return 返回未出场的月租户车辆数
+     */
+    int countTenantCar();
 
     /**
      * @param record
      * @see EntryExitRecord
      * @return
      */
+    @Override
     @SuppressWarnings({"unchecked"})
     EntryExitRecord save(EntryExitRecord record);
 

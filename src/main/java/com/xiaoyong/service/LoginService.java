@@ -21,7 +21,7 @@ public class LoginService {
     }
 
     public String login(String user, String password) {
-        Admin admin = loginDao.findUserInfoByUser(user);
+        Admin admin = loginDao.findUserInfoByUsername(user);
         if (admin == null) {
             return "FAILED !";
         }

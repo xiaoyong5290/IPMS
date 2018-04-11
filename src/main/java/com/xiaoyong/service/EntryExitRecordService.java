@@ -1,11 +1,11 @@
 package com.xiaoyong.service;
 
 import com.xiaoyong.model.dao.EntryExitRecordDao;
+import com.xiaoyong.model.dao.TenantInfoDao;
 import com.xiaoyong.model.entity.EntryExitRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -18,10 +18,12 @@ public class EntryExitRecordService {
 
 
     private final EntryExitRecordDao entryExitRecordDao;
+    private final TenantInfoDao tenantInfoDao;
 
     @Autowired
-    public EntryExitRecordService(EntryExitRecordDao entryExitRecordDao) {
+    public EntryExitRecordService(EntryExitRecordDao entryExitRecordDao, TenantInfoDao tenantInfoDao) {
         this.entryExitRecordDao = entryExitRecordDao;
+        this.tenantInfoDao = tenantInfoDao;
     }
 
     public String createRecord(EntryExitRecord newRecord) {
@@ -40,7 +42,9 @@ public class EntryExitRecordService {
 
     public int getRemainedBerthCount() {
 //        此处还要减去月租户数量，但暂时保持这样
-        return this.getUncompletedRecords().size();
+//        List<EntryExitRecord> carList = entryExitRecordDao.findAllByExitTimeNull();
+
+        return (int)entryExitRecordDao.countTenantCar();
     }
 
     public String completeRecord(EntryExitRecord entryExitRecord) {

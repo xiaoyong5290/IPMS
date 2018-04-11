@@ -16,6 +16,6 @@ public interface LoginDao extends JpaRepository<Admin,String> {
      * @param user 通过用户名user从数据库查询出密码
      * @return 返回UserInfo对象
      */
-    Admin findUserInfoByUser(String user);
+    Admin findUserInfoByUsername(String user);
 
 }
