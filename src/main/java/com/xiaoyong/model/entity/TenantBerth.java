@@ -8,8 +8,8 @@ import javax.persistence.*;
  * Description    :
  */
 @Entity
-@Table(name = "tenant_berth_info", schema = "ipdb", catalog = "")
-public class TenantBerthInfo {
+@Table(name = "tenant_berth", schema = "ipdb", catalog = "")
+public class TenantBerth {
     private int berthId;
     private int tenantId;
     private String position;
@@ -53,7 +53,7 @@ public class TenantBerthInfo {
             return false;
         }
 
-        TenantBerthInfo that = (TenantBerthInfo) o;
+        TenantBerth that = (TenantBerth) o;
 
         if (berthId != that.berthId) {
             return false;

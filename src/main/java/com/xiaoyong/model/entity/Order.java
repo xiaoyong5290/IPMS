@@ -1,9 +1,6 @@
 package com.xiaoyong.model.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
@@ -12,7 +9,8 @@ import java.sql.Timestamp;
  * Description    :
  */
 @Entity
-public class Orders {
+@Table(name = "order", schema = "ipdb", catalog = "")
+public class Order {
     private int orderId;
     private int recordId;
     private Timestamp payTime;
@@ -89,24 +87,24 @@ public class Orders {
             return false;
         }
 
-        Orders orders = (Orders) o;
+        Order order = (Order) o;
 
-        if (orderId != orders.orderId) {
+        if (orderId != order.orderId) {
             return false;
         }
-        if (recordId != orders.recordId) {
+        if (recordId != order.recordId) {
             return false;
         }
-        if (parkingCost != orders.parkingCost) {
+        if (parkingCost != order.parkingCost) {
             return false;
         }
-        if (orderState != orders.orderState) {
+        if (orderState != order.orderState) {
             return false;
         }
-        if (payTime != null ? !payTime.equals(orders.payTime) : orders.payTime != null) {
+        if (payTime != null ? !payTime.equals(order.payTime) : order.payTime != null) {
             return false;
         }
-        if (note != null ? !note.equals(orders.note) : orders.note != null) {
+        if (note != null ? !note.equals(order.note) : order.note != null) {
             return false;
         }
 

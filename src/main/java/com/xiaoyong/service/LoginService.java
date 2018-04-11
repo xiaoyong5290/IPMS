@@ -1,7 +1,7 @@
 package com.xiaoyong.service;
 
 import com.xiaoyong.model.dao.LoginDao;
-import com.xiaoyong.model.entity.UserInfo;
+import com.xiaoyong.model.entity.Admin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +21,11 @@ public class LoginService {
     }
 
     public String login(String user, String password) {
-        UserInfo userInfo = loginDao.findUserInfoByUser(user);
-        if (userInfo == null) {
+        Admin admin = loginDao.findUserInfoByUser(user);
+        if (admin == null) {
             return "FAILED !";
         }
-        if (password.equals(userInfo.getPassword())) {
+        if (password.equals(admin.getPassword())) {
             return "欢迎你， " + user + " ！";
         }
         return "FAILED !";

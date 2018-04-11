@@ -1,6 +1,9 @@
 package com.xiaoyong.model.entity;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author : XiaoYong
@@ -8,9 +11,14 @@ import javax.persistence.*;
  * Description    :
  */
 @Entity
-@Table(name = "temporary_car_info", schema = "ipdb", catalog = "")
-public class TemporaryCarInfo {
+@Table(name = "business_car", schema = "ipdb", catalog = "")
+public class BusinessCar {
+    @Length(min = 8,max = 8,message = "plateId.LengthError")
+    @NotNull(message = "plateId.Null")
     private String plateId;
+    @Length(min = 10,max = 10,message = "businessId.LengthError")
+    @NotNull(message = "businessId.Null")
+    private int businessId;
     private String carType;
     private String carColor;
 
@@ -22,6 +30,16 @@ public class TemporaryCarInfo {
 
     public void setPlateId(String plateId) {
         this.plateId = plateId;
+    }
+
+    @Basic
+    @Column(name = "business_id")
+    public int getBusinessId() {
+        return businessId;
+    }
+
+    public void setBusinessId(int businessId) {
+        this.businessId = businessId;
     }
 
     @Basic
@@ -53,8 +71,11 @@ public class TemporaryCarInfo {
             return false;
         }
 
-        TemporaryCarInfo that = (TemporaryCarInfo) o;
+        BusinessCar that = (BusinessCar) o;
 
+        if (businessId != that.businessId) {
+            return false;
+        }
         if (plateId != null ? !plateId.equals(that.plateId) : that.plateId != null) {
             return false;
         }
@@ -71,6 +92,7 @@ public class TemporaryCarInfo {
     @Override
     public int hashCode() {
         int result = plateId != null ? plateId.hashCode() : 0;
+        result = 31 * result + businessId;
         result = 31 * result + (carType != null ? carType.hashCode() : 0);
         result = 31 * result + (carColor != null ? carColor.hashCode() : 0);
         return result;

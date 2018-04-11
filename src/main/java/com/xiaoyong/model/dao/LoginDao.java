@@ -1,10 +1,8 @@
 package com.xiaoyong.model.dao;
 
-import com.xiaoyong.model.entity.UserInfo;
+import com.xiaoyong.model.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.Map;
 
 /**
  * @author : XiaoYong
@@ -12,12 +10,12 @@ import java.util.Map;
  * Description    :
  */
 @Repository
-public interface LoginDao extends JpaRepository<UserInfo,String> {
+public interface LoginDao extends JpaRepository<Admin,String> {
 
     /**
      * @param user 通过用户名user从数据库查询出密码
      * @return 返回UserInfo对象
      */
-    UserInfo findUserInfoByUser(String user);
+    Admin findUserInfoByUser(String user);
 
 }

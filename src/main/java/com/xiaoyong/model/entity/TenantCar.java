@@ -1,10 +1,6 @@
 package com.xiaoyong.model.entity;
 
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author : XiaoYong
@@ -12,14 +8,10 @@ import javax.validation.constraints.NotNull;
  * Description    :
  */
 @Entity
-@Table(name = "business_car_info", schema = "ipdb", catalog = "")
-public class BusinessCarInfo {
-    @Length(min = 8,max = 8,message = "plateId.LengthError")
-    @NotNull(message = "plateId.Null")
+@Table(name = "tenant_car", schema = "ipdb", catalog = "")
+public class TenantCar {
     private String plateId;
-    @Length(min = 10,max = 10,message = "businessId.LengthError")
-    @NotNull(message = "businessId.Null")
-    private int businessId;
+    private int tenantId;
     private String carType;
     private String carColor;
 
@@ -34,13 +26,13 @@ public class BusinessCarInfo {
     }
 
     @Basic
-    @Column(name = "business_id")
-    public int getBusinessId() {
-        return businessId;
+    @Column(name = "tenant_id")
+    public int getTenantId() {
+        return tenantId;
     }
 
-    public void setBusinessId(int businessId) {
-        this.businessId = businessId;
+    public void setTenantId(int tenantId) {
+        this.tenantId = tenantId;
     }
 
     @Basic
@@ -72,9 +64,9 @@ public class BusinessCarInfo {
             return false;
         }
 
-        BusinessCarInfo that = (BusinessCarInfo) o;
+        TenantCar that = (TenantCar) o;
 
-        if (businessId != that.businessId) {
+        if (tenantId != that.tenantId) {
             return false;
         }
         if (plateId != null ? !plateId.equals(that.plateId) : that.plateId != null) {
@@ -93,7 +85,7 @@ public class BusinessCarInfo {
     @Override
     public int hashCode() {
         int result = plateId != null ? plateId.hashCode() : 0;
-        result = 31 * result + businessId;
+        result = 31 * result + tenantId;
         result = 31 * result + (carType != null ? carType.hashCode() : 0);
         result = 31 * result + (carColor != null ? carColor.hashCode() : 0);
         return result;

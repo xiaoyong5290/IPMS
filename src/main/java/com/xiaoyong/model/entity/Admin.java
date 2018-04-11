@@ -8,20 +8,20 @@ import javax.persistence.*;
  * Description    :
  */
 @Entity
-@Table(name = "user_info", schema = "ipdb", catalog = "")
-public class UserInfo {
-    private String user;
+@Table(name = "admin", schema = "ipdb", catalog = "")
+public class Admin {
+    private String username;
     private String password;
     private int level;
 
     @Id
-    @Column(name = "user")
-    public String getUser() {
-        return user;
+    @Column(name = "username")
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Basic
@@ -53,15 +53,15 @@ public class UserInfo {
             return false;
         }
 
-        UserInfo userInfo = (UserInfo) o;
+        Admin admin = (Admin) o;
 
-        if (level != userInfo.level) {
+        if (level != admin.level) {
             return false;
         }
-        if (user != null ? !user.equals(userInfo.user) : userInfo.user != null) {
+        if (username != null ? !username.equals(admin.username) : admin.username != null) {
             return false;
         }
-        if (password != null ? !password.equals(userInfo.password) : userInfo.password != null) {
+        if (password != null ? !password.equals(admin.password) : admin.password != null) {
             return false;
         }
 
@@ -70,7 +70,7 @@ public class UserInfo {
 
     @Override
     public int hashCode() {
-        int result = user != null ? user.hashCode() : 0;
+        int result = username != null ? username.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + level;
         return result;

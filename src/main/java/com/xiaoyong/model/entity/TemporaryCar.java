@@ -8,10 +8,9 @@ import javax.persistence.*;
  * Description    :
  */
 @Entity
-@Table(name = "tenant_car_info", schema = "ipdb", catalog = "")
-public class TenantCarInfo {
+@Table(name = "temporary_car", schema = "ipdb", catalog = "")
+public class TemporaryCar {
     private String plateId;
-    private int tenantId;
     private String carType;
     private String carColor;
 
@@ -23,16 +22,6 @@ public class TenantCarInfo {
 
     public void setPlateId(String plateId) {
         this.plateId = plateId;
-    }
-
-    @Basic
-    @Column(name = "tenant_id")
-    public int getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(int tenantId) {
-        this.tenantId = tenantId;
     }
 
     @Basic
@@ -64,11 +53,8 @@ public class TenantCarInfo {
             return false;
         }
 
-        TenantCarInfo that = (TenantCarInfo) o;
+        TemporaryCar that = (TemporaryCar) o;
 
-        if (tenantId != that.tenantId) {
-            return false;
-        }
         if (plateId != null ? !plateId.equals(that.plateId) : that.plateId != null) {
             return false;
         }
@@ -85,7 +71,6 @@ public class TenantCarInfo {
     @Override
     public int hashCode() {
         int result = plateId != null ? plateId.hashCode() : 0;
-        result = 31 * result + tenantId;
         result = 31 * result + (carType != null ? carType.hashCode() : 0);
         result = 31 * result + (carColor != null ? carColor.hashCode() : 0);
         return result;

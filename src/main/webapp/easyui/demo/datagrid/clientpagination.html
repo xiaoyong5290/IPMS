@@ -50,12 +50,12 @@
 				}
 				if (!opts.remoteSort && opts.sortName){
 					var names = opts.sortName.split(',');
-					var orders = opts.sortOrder.split(',');
+					var order = opts.sortOrder.split(',');
 					state.allRows.sort(function(r1,r2){
 						var r = 0;
 						for(var i=0; i<names.length; i++){
 							var sn = names[i];
-							var so = orders[i];
+							var so = order[i];
 							var col = $(target).datagrid('getColumnOption', sn);
 							var sortFunc = col.sorter || function(a,b){
 								return a==b ? 0 : (a>b?1:-1);

@@ -10,8 +10,9 @@ import java.util.Arrays;
  * Description    :
  */
 @Entity
-@Table(name = "entry_exit_records", schema = "ipdb", catalog = "")
-public class EntryExitRecords {
+@SuppressWarnings("unused")
+@Table(name = "entry_exit_record", schema = "ipdb", catalog = "")
+public class EntryExitRecord {
     private int recordId;
     private String plateId;
     private Timestamp enterTime;
@@ -121,7 +122,7 @@ public class EntryExitRecords {
             return false;
         }
 
-        EntryExitRecords that = (EntryExitRecords) o;
+        EntryExitRecord that = (EntryExitRecord) o;
 
         if (recordId != that.recordId) {
             return false;

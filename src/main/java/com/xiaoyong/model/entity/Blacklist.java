@@ -3,10 +3,7 @@ package com.xiaoyong.model.entity;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
@@ -17,6 +14,7 @@ import javax.validation.constraints.Null;
  */
 @Entity
 @SuppressWarnings("unused")
+@Table(name = "blacklist", schema = "ipdb", catalog = "")
 public class Blacklist {
     @Length(min = 8,max = 8,message = "plateId.LengthError")
     @NotNull(message = "plateId.Null")
