@@ -5,5 +5,5 @@ package com.xiaoyong.model.dao;
  * @date : 2018/4/10 18:37
  * Description    :
  */
-public interface TemporaryCarInfoDao {
+public interface TenantBerthDao {
 }

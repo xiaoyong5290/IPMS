@@ -5,5 +5,5 @@ package com.xiaoyong.model.dao;
  * @date : 2018/4/10 18:35
  * Description    :
  */
-public interface OrdersDao {
+public interface OrderDao {
 }

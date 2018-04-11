@@ -12,6 +12,13 @@ import java.util.List;
  * Description    :
  */
 public interface BlacklistDao extends JpaRepository<Blacklist,String>,CrudRepository<Blacklist,String> {
+
+
+    /**
+     * 添加黑名单
+     * @param blacklist
+     * @return
+     */
     @SuppressWarnings("unchecked")
     Blacklist save(Blacklist blacklist);
 
