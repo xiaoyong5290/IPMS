@@ -30,4 +30,6 @@ public class TenantInfoService {
     public List<TenantInfo> getAllInactiveTenants() {
         return tenantInfoDao.findAllByLeasehold(0);
     }
+
+
 }

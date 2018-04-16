@@ -1,6 +1,8 @@
 package com.xiaoyong.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * @author : XiaoYong
@@ -12,7 +14,12 @@ import javax.persistence.*;
 public class Admin {
     private String username;
     private String password;
+    @NotNull
     private int level;
+
+    {
+        level = 99;
+    }
 
     @Id
     @Column(name = "username")

@@ -27,7 +27,9 @@ public interface TenantInfoDao extends JpaRepository<TenantInfo,Integer>,PagingA
 
     /**
      * @param leasehold 统计未过期的月租户的数量
-     * @return 可用来统计停车场剩余泊位的数量
+     * @return
      */
     long countByLeasehold(int leasehold);
+
+
 }
